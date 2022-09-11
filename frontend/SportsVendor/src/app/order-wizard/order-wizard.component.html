@@ -1,0 +1,17 @@
+<mat-stepper orientation="horizontal" [linear]="true" class="stepper" color="accent" #stepper>
+  <form [formGroup]="orderForm">
+    <mat-step [stepControl]="shippingStep">
+      <ng-template matStepLabel>Shipping Address</ng-template>
+      <app-shipping-wizard-step (next)="next(stepper)" [order$]="order$" [shippingForm]="shippingStep"></app-shipping-wizard-step>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Payment</ng-template>
+      <app-payment-wizard-step (next)="next(stepper)" [order$]="order$" [paymentForm]="paymentStep"></app-payment-wizard-step>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Place Order</ng-template>
+      <app-complete-order-wizard-step [formGroup]="orderForm" [order$]="order$"></app-complete-order-wizard-step>
+    </mat-step>
+  </form>
+</mat-stepper>
+

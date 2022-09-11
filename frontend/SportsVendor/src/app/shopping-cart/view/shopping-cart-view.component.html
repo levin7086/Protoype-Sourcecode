@@ -1,0 +1,23 @@
+<app-top-bar [text]="'Your Shopping Cart'"></app-top-bar>
+<div *ngIf="!empty">
+  <div fxLayout="column" fxLayoutAlign="center center">
+    <ag-grid-angular
+      style="width: 800px; height: 500px;"
+      class="ag-theme-alpine"
+      [rowData]="rowData | async"
+      [columnDefs]="columnDefs"
+      [components]="frameworkComponents"
+      (gridReady)="onGridReady($event)"
+    ></ag-grid-angular>
+  </div>
+  <div fxLayoutGap="30px" fxLayout="row" fxLayoutAlign="space-evenly center">
+    <h3>Total: {{ total}}</h3>
+    <a mat-raised-button routerLink="/order" routerLinkActive="active" color="accent">Order Now</a>
+  </div>
+  <mat-divider></mat-divider>
+  <app-complementary-products [shoppingCart$]="shoppingCart$" (addToCartEvent)="onRecommendationAdded($event)"></app-complementary-products>
+
+</div>
+<div *ngIf="empty" fxLayout="column" fxLayoutAlign="center center">
+    <h1>There seems to be nothing in here</h1>
+</div>

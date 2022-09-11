@@ -1,0 +1,42 @@
+<h2>Your Order: </h2>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Order positions:</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <app-order-overview-table [order$]="order$"></app-order-overview-table>
+  </mat-card-content>
+</mat-card>
+<div fxLayout="row" fxLayoutAlign="space-between start" class="m5">
+  <div fxLayout="row">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Shipping Address:</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>{{order.shippingAddress?.firstName}} {{order.shippingAddress?.lastName}}</p>
+        <p>{{order.shippingAddress?.street}} {{order.shippingAddress?.houseNumber}}</p>
+        <p>{{order.shippingAddress?.postalCode}} {{order.shippingAddress?.place}}</p>
+      </mat-card-content>
+    </mat-card>
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Billing Address:</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>{{order.billingAddress?.firstName}} {{order.billingAddress?.lastName}}</p>
+        <p>{{order.billingAddress?.street}} {{order.billingAddress?.houseNumber}}</p>
+        <p>{{order.billingAddress?.postalCode}} {{order.billingAddress?.place}}</p>
+      </mat-card-content>
+    </mat-card>
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Paying with:</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>{{order.paymentMethod?.name}}</p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <a (click)="saveOrder()" color="accent" mat-raised-button>Place Order</a>
+</div>

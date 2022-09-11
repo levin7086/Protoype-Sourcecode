@@ -1,0 +1,12 @@
+<mat-card fxLayout="column" fxLayoutAlign="space-evenly center">
+  <mat-hint *ngIf="recommended">Recommended category based on your previous behaviour</mat-hint>
+  <h2>{{category.displayName}}</h2>
+  <ag-grid-angular
+    style="width: 900px; height: 300px;"
+    class="ag-theme-alpine"
+    [rowData]="rowData | async"
+    [columnDefs]="columnDefs"
+    [components]="frameworkComponents"
+  >
+  </ag-grid-angular>
+</mat-card>

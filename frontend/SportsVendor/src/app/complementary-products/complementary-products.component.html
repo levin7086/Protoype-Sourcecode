@@ -1,0 +1,19 @@
+<div fxLayout="column" fxLayoutAlign="center center" style="background-color: #ACBFA4; padding-bottom: 9px">
+  <h2>Based on your Shopping Cart, you may also like:</h2>
+  <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="20">
+    <mat-card *ngFor="let rec of recommendations"
+              style="width: 180px; height: 130px; overflow: scroll">
+      <mat-card-content>
+        <h3>{{rec.product!.name!}}</h3>
+        <h5>{{rec.product!.description!}}</h5>
+        <div fxLayout="row" fxLayoutAlign="space-between start"
+             style="background-color: lightgray">
+          <h2>{{formatPrice(rec.product!.price)}}</h2>
+          <button mat-icon-button (click)="onClick(rec)" style="color: #FF7F11">
+            <mat-icon>add_shopping_cart</mat-icon>
+          </button>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

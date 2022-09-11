@@ -1,0 +1,54 @@
+<div class="container">
+  <mat-card>
+    <mat-card-title>Billing Address</mat-card-title>
+    <mat-error *ngIf="invalid">Please fill out all fields</mat-error>
+    <mat-card-content>
+      <form [formGroup]="paymentForm">
+        <div fxLayout="row" fxLayoutGap="10">
+          <mat-form-field class="i1" appearance="standard">
+            <mat-label>First Name</mat-label>
+            <input matInput formControlName="firstName"/>
+          </mat-form-field>
+          <mat-form-field class="i1" appearance="standard">
+            <mat-label>Last Name</mat-label>
+            <input matInput formControlName="lastName"/>
+          </mat-form-field>
+        </div>
+        <div fxLayout="row" fxLayoutGap="10">
+          <mat-form-field class="i1" appearance="standard">
+            <mat-label>Street</mat-label>
+            <input matInput formControlName="street"/>
+          </mat-form-field>
+          <mat-form-field class="number" appearance="standard">
+            <mat-label>House Nr</mat-label>
+            <input matInput formControlName="houseNr"/>
+          </mat-form-field>
+        </div>
+        <div fxLayout="row" fxLayoutGap="10">
+          <mat-form-field class="number" appearance="standard">
+            <mat-label>Postal code</mat-label>
+            <input matInput formControlName="postalCode"/>
+          </mat-form-field>
+          <mat-form-field class="i1" appearance="standard">
+            <mat-label>Place</mat-label>
+            <input matInput formControlName="place"/>
+          </mat-form-field>
+        </div>
+        <mat-divider></mat-divider>
+          <mat-radio-group formControlName="paymentMethod" aria-label="Payment Methods"
+                           style="margin: 15px" fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="10">
+            <mat-radio-button [checked]="true" value="1">Pay with SecurePay</mat-radio-button>
+            <mat-radio-button value="2">Pay with Credit Card</mat-radio-button>
+          </mat-radio-group>
+        <mat-divider></mat-divider>
+      </form>
+
+      <app-order-overview-table [order$]="order$"></app-order-overview-table>
+
+      <div class="button-row">
+        <button mat-button>back</button>
+        <button mat-flat-button (click)="onNext()" color="primary">View Order</button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

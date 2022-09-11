@@ -1,0 +1,91 @@
+Please reach out to me if issues arise:
+levin.schnabel@stud.leuphana.de
+
+Requirements:
+
+- Java 11
+- node
+- npm package manager
+- angular 13.3.0 (angular cli)
+- ports are not used by any other application: 
+  > 4200
+  > 8080
+  > 8081
+  > 8082
+  > 8083
+  > 9092
+
+
+Running the application:
+
+1. Start Kafka (See below)
+2. Ensure Kafka is fully operational (no new messages are logged) (for manual Kafka installation)
+2.5. When using Docker: visit website localhost:9021 and verify that it displays "1 Healthy Cluster"
+3. Navigate to the backend/build directory in four different terminal / bash sessions
+4. Run each .jar file by executing < java -jar fileName.jar >
+ e.g., java -jar CatalogService.jar
+Consider the following order
+Only for the first time:
+	a. Run CatalogService.jar
+	b. visit in browser localhost:8080/catalog/generate
+	*It will only show a blank page but will send a request to the CatalogService to generate a
+	dummy catalog
+	c. Consult log to ensure it has finished (no new messages appear)
+	d. Run CartService.jar and OrderService.jar
+	e. Run RecommendationService.jar
+
+5. Within an extra terminal session: navigate to frontend/SportsVendor
+6. For the first time: Use command < npm install > to install required dependencies
+7. Use command < ng serve > to run the Application
+
+8. If you DON’T run the application for the first time, be patient which the initialisation of the services as they might take longer to process existing data
+
+10. Visit localhost:4200 to inspect the Website
+
+
+Shutting Down:
+
+1. Shutdown angular server (using ctrl + c)
+2. Shutdown each java server (using ctrl + c)
+3. Shutdown Kafka cluster:
+	A.) For Docker: run < docker compose kill >
+	B.) For manual version: use ctrl + c On both sessions
+
+
+Start Kafka:
+
+Option a - docker compose: *recommended
+
+*Docker required (latest version!)
+
+*Additional free ports: 9092, 8088, 8090, 8091, 8092, 9092
+
+*The docker image is provided by Confluent, which comes with additional software which was not utilised by the prototype
+
+1. Navigate to directory kafka-docker
+2. Run command < docker compose up -d >
+*The first time you run the command, it will download the docker images from Docker Hub. This might take a while
+3. Use command < docker container ls > to verify that 9 individual containers have status 'up'
+4. If less than 9 containers are running repeat from step 2.
+*This might happen because some containers depend On other containers. If they are deployed in the same moment of time the required container might not have bootet yet. Therefore dependent containers shut down. With < docker compose up -d > the remaining containers are started again
+
+*Furthermore check if 
+	A. you have the latest version of docker
+	B. Killing the containers < docker compose kill > helps
+
+Option b - manual:
+
+*It is required that all parent folders of kafka-3.2.0-src DON't contain white spaces
+
+*Executing the .sh files might write files outside of the prototypical-realisation
+If you want to avoid that you may provide an absolute path to a directory in config/server.properties and config/zookeeper.properties
+
+1. Within two terminal sessions: navigate to directory kafka-3.2.0-src
+2. in separate sessions run:
+
+bin/zookeeper-server-start.sh config/zookeeper.properties
+ 
+And
+
+bin/kafka-server-start.sh config/server.properties
+

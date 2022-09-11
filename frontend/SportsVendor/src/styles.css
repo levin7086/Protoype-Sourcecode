@@ -1,0 +1,62 @@
+@import "ag-grid-community/dist/styles/ag-grid.css";
+@import "ag-grid-community/dist/styles/ag-theme-alpine.css";
+@import "../node_modules/@angular/material/prebuilt-themes/indigo-pink.css";
+
+html{background-color: #E2E8CE}, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: auto;
+  width: 30%;
+  height: 70%;
+}
+
+.stepper{
+  justify-content: center;
+  margin: auto;
+  width: 75%;
+}
+
+.input-group{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.i1{
+  flex-grow: 1;
+}
+.i3{
+  flex-grow: 3;
+}
+
+.button-row{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.m0{
+  margin: 0px;
+}
+
+.m3{
+  margin: 3px;
+}
+
+.m5{
+  margin: 5px;
+}
+
+.top-bar{
+  position: relative;
+  width: 100%;
+  left:0;
+  right:0;
+  overflow: scroll;
+}

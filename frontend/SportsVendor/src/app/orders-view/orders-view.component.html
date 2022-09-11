@@ -1,0 +1,50 @@
+<div fxLayout="column" fxLayoutAlign="start stretch">
+  <app-top-bar [text]="'Your Orders'"></app-top-bar>
+  <div fxLayout="column" fxLayoutAlign="space-evenly center">
+    <mat-card *ngFor="let order of orders"
+              style="width: 60%; margin-bottom: 15px">
+      <mat-card-header fxLayoutAlign="center">
+        <mat-card-title>
+          <h2>Order {{order.orderNumber}}</h2>
+        </mat-card-title>
+      </mat-card-header>
+      <mat-divider style="padding-bottom: 5px"></mat-divider>
+      <mat-card-content>
+        <h3>Order Status: {{order.orderStatus}}</h3>
+        <div fxLayout="row"
+             fxLayoutAlign="space-between end"
+             style="margin: 4px"
+        >
+          <div>
+            <p style="margin: 0">Shipping with {{order.shippingMethod}} </p>
+            <p>To:</p>
+            <div
+              style="max-width: 85%; border: 1px solid lightgrey">
+              <p style="margin: 0">{{order.shippingAddress.firstName}} {{order.shippingAddress.lastName}}</p>
+              <span>{{order.shippingAddress.street}} {{order.shippingAddress.houseNumber}}, </span>
+              <span>{{order.shippingAddress.postalCode}} {{order.shippingAddress.place}}</span>
+            </div>
+          </div>
+          <div>
+            <p style="margin: 0">Paying with {{order.paymentMethod}} </p>
+            <h3 style="margin: 0">
+              <b> Total {{getTotal(order)}} </b>
+            </h3>
+          </div>
+        </div>
+        <mat-accordion style="margin: 4px">
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              Products
+            </mat-expansion-panel-header>
+            <div *ngFor="let position of order.orderPositions"
+                 fxLayout="row" fxLayoutAlign="space-between">
+              <mat-hint>{{position.articleName}}</mat-hint>
+              <mat-hint>{{getPrice(position)}}</mat-hint>
+            </div>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

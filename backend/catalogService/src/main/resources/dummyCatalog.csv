@@ -1,0 +1,24 @@
+articleNumber;name;description;category;currentAssortment;price
+P#1;Volleyball Official;Use the ball thousands of professionals performed with;INDOOR_VOLLEYBALL;TRUE;89.99
+P#2;Volleyball ball trainee;The right time for training is now!;INDOOR_VOLLEYBALL;TRUE;45.70
+P#3;FloorSlider Knee Pads;Master the dive - protect your knees;INDOOR_VOLLEYBALL;TRUE;59.89
+P#4;KneePads XL;;INDOOR_VOLLEYBALL;TRUE;20.00
+P#5;Ball Trolley foldable;Can hold up to 20 Volleyballs;INDOOR_VOLLEYBALL;TRUE;28.89
+P#6;Volleyball Bag;"carries 6 volleyballs; extra comfortable for transport";INDOOR_VOLLEYBALL;TRUE;18.89
+P#7;Beachvolleyball Sandspiker;An entry-level beachvolleyball especially good for beginners;BEACH_VOLLEYBALL;TRUE;30.33
+P#8;Beachvolleyball Official;The official beachvolleyball used by professionals across leagues;BEACH_VOLLEYBALL;TRUE;60.66
+P#9;Easynet;An easy to mount outdoor net to enable. Playing at every location!;BEACH_VOLLEYBALL;TRUE;22.00
+P#10;Beachsocks Nethoppers;Keep your feet warm even in winter!;BEACH_VOLLEYBALL;TRUE;9.65
+P#11;Zi X9 Comfortracket;225g leight weight racket for sunny days;TENNIS;TRUE;89.95
+P#12;Splash 2000 Tournament Racket;295g for heavy precision swings;TENNIS;TRUE;170.98
+P#13;Zi A8 Allround Racket;;TENNIS;TRUE;102.00
+P#14;4x premium ;;TENNIS;TRUE;5.50
+P#15;Forx Tournament - 4 Balls;;TENNIS;TRUE;13.30
+P#16;Agile Star EasyDry Skirt;White skirt which allows for great agility;TENNIS;TRUE;38.98
+P#17;Agile Star EasyDry Shorts;Ocean-blue shorts to gurantee the best agility;TENNIS;TRUE;59.32
+P#18;Shiny Shin Guards;Best protection for your shins. Size: M;FOOTBALL;TRUE;35.75
+P#19;Flydidas Soccer Boots;"Control the ball; score the goals";FOOTBALL;TRUE;150.00
+P#20;Clubber football socks;Organic soccs;FOOTBALL;TRUE;14.95
+P#21;Flydidas socks;;FOOTBALL;TRUE;5.95
+P#22;GameDay football;Official game ball of football league made of leather;FOOTBALL;TRUE;89.88
+P#23;MTV Away Jersy 2022/23;Official away jersey of your favourite team;FOOTBALL;TRUE;101.00

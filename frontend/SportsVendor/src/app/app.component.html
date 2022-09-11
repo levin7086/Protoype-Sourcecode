@@ -1,0 +1,8 @@
+<mat-toolbar style="background-color: #262626; color: white; position: sticky; overflow: visible; top: 0;  z-index: 1000;">
+  <h1>{{title}}</h1>
+  <span class="example-spacer"></span>
+  <a mat-button routerLink="/browse" routerLinkActive="active">Browse</a>
+  <a mat-button routerLink="/orders" routerLinkActive="active">Your Orders</a>
+  <a mat-raised-button routerLink="/cart" routerLinkActive="active"><mat-icon>shopping_cart</mat-icon></a>
+</mat-toolbar>
+<router-outlet></router-outlet>

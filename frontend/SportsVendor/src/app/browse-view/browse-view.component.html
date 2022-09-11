@@ -1,0 +1,7 @@
+<div fxLayout="column" fxLayoutAlign="start stretch" fxLayoutGap="10px" >
+    <app-top-bar [text]="'Browse recommended categories'"></app-top-bar>
+    <div *ngFor="let category of displayedCategories">
+      <app-category-view [category]="category"
+      [recommended]='this.recommendedCategories.includes(category) || false'></app-category-view>
+    </div>
+</div>
